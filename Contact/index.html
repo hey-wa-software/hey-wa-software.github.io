@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <title>平和 > Contact</title>
+</head>
+
+<body>
+    <!-- site identification header -->
+    <h1><a href="/">平和</a></h1>
+    <!-- page identification header -->
+    <h2>
+        Contact
+    </h2>
+    <hr />
+
+    <!-- page table of contents -->
+
+    What kind of feedback would you like to give?
+
+    <ul>
+        <li>
+            <a href="#comment">General Feedback</a>
+            - I have a constructive comment.
+        </li>
+        <li>
+            <a href="#bug">Bug Report</a>
+            - I think I found a defect in the software.
+        </li>
+    </ul>
+
+    <!-- page body -->
+
+    <h2><a name="comment">General Feedback</a></h2>
+
+    <p>
+        <a href="mailto:hey-wa-software@gmail.com?subject=Constructive%20Feedback">
+            Your constructive feedback
+        </a>
+        about Hey, Washington! Software is welcome.
+    </p>
+
+    <h2><a name="bug">Bug Report</a></h2>
+
+    <p>
+        If you encountered a problem with the software,
+        <a href="mailto:hey-wa-software@gmail.com?subject=Bug%20report%3A">
+            please let me know
+        </a>.
+    </p>
+
+    <h3>
+        <a name="effectivebugreport">
+            An Effective Bug Report
+        </a>
+    </h3>
+
+    <p>
+        An effective bug report will contain enough information to help me find and fix the problem that you encountered.
+    </p>
+    <p>
+        Including as much of the following information as you can is helpful, the more the better:
+    </p>
+
+    <dl>
+        <dt>Title (the e-mail subject line)</dt>
+        <dd>A summary of what went wrong.</dd>
+        <dt>Repro Steps</dt>
+        <dd>
+            How to encounter the problem.
+            Pretend that you're writing a recipe; describe how you used the software step by step to reveal the problem.
+        </dd>
+        <dt>Actual Behavior</dt>
+        <dd>
+            Describe what went wrong as a result of following your recipe.
+        </dd>
+        <dt>Expected Behavior</dt>
+        <dd>
+            Describe what should have happened a result of following your recipe.
+        </dd>
+        <dt>Severity</dt>
+        <dd>How bad the problem is, when it happens.</dd>
+        <dt>Priority</dt>
+        <dd>How unavoidable the problem is.</dd>
+        <dt>Reproducibility</dt>
+        <dd>How reliably the repro steps reveal the problem.</dd>
+    </dl>
+
+    <h3>
+        <a name="examplebugreport">
+            An Example Bug Report
+        </a>
+    </h3>
+
+    <p>
+        The following is a hypothetical example of an exceptionally detailed bug report.  The most important parts are near the top -- give only as much detail as you are able to and comfortable with.
+    </p>
+
+    <table style="border: 1px solid black; margin: 3em;">
+        <tr>
+            <td>
+                <dl>
+                    <dt>Title</dt>
+                    <dd>The Job Filter Extension for LinkedIn doesn't remember new filters</dd>
+                    <dt>Repro Steps</dt>
+                    <dd>
+                        <ol>
+                            <li>Install the extension in Google Chrome</li>
+                            <li>Open the extension's side panel.</li>
+                            <li>(There are no filters defined.)</li>
+                            <li>Create an Undesirable Employer Filter for "A fictitious company name" without the quotation marks.</li>
+                            <li>Close the browser.</li>
+                            <li>Open the browser again.</li>
+                            <li>Open the extension's side panel.</li>
+                            <li>In the side panel, look at the Undesirable Employer Filters for "A fictitious company name".</li>
+                        </ol>
+                    </dd>
+                    <dt>Actual Behavior</dt>
+                    <dd>
+                        There is no filter containing "A fictitious company name" under Undesirable Employers or any other category of filters.
+                    </dd>
+                    <dt>Expected Behavior</dt>
+                    <dd>
+                        The browser should remember the Undesirable Employer Filter that I created.
+                    </dd>
+                    <dt>Reproducibility</dt>
+                    <dd>
+                        100% (3 of 3 attempts in Google Chrome version 135.0.7049.42 and Microsoft Edge version 134.0.3124.93).  The same thing happened on two different computers -- one Windows 10 and one Windows 11.
+                    </dd>
+                    <dt>Severity</dt>
+                    <dd>
+                        High - data loss (doesn't keep new data; existing data is not affected)
+                    </dd>
+                    <dt>Priority</dt>
+                    <dd>
+                        High - If the browser won't remember any filters after I close the browser, that means I have to add them from scratch every time I open the browser.
+                    </dd>
+                </dl>
+            </td>
+        </tr>
+    </table>
+
+    <!-- copyright notice footer -->
+    <hr />
+    &copy; 2025 <a href="/">平和 - Hey, Washington! Software</a>
+    | <a href="./Contact/">Contact</a>
+
+</body>
+
+</html>

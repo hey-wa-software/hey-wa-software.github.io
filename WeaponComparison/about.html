@@ -1,0 +1,248 @@
+<html>
+
+<head>
+    <title>平和 - Weapon Comparison Extension for DIM > About</title>
+    <style>
+        dt {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- site identification header -->
+    <h1><a href="/">平和</a></h1>
+    <!-- folder identification header -->
+    <h2><a href="/WeaponComparison">Weapon Comparison Extension for DIM</a> (Browser Extension)</h2>
+    <!-- page identification header -->
+    <h2>
+        About
+    </h2>
+    <hr />
+
+    <!-- page table of contents -->
+
+    Contents
+
+    <ul>
+        <li><a href="#what">What is this?</a></li>
+        <li><a href="#why">What is it for?</a></li>
+        <li><a href="#appearance">What does it look like?</a></li>
+        <li><a href="#motivation">What inspired this extension?</a></li>
+        <li><a href="#how">How does it work?</a></li>
+        <li><a href="#interacting">What can I do with the scores?</a></li>
+        <li><a href="#known-issues">Known issues</a></li>
+    </ul>
+
+    <!-- page body -->
+
+    <h2><a name="what">What is this?</a></h2>
+
+    <p>
+        It is a browser extension designed to add information I find useful to
+        <a href="https://destinyitemmanager.com/">
+            DIM (Destiny Item Manager)
+        </a>.
+    </p>
+
+    <h2><a name="why">What is it for?</a></h2>
+
+    <p>
+        When comparing weapons in DIM, this extension helped me quickly identify which one was "best".
+    </p>
+
+    <p>
+        When comparing two or more weapons, this extension reads each weapon's stats to calculate a score, displays that
+        score below each weapon's name, and lets you sort this new row of numbers. The "best" score is shown in cyan as
+        "1.000" and the numbers get smaller and redder from there.
+    </p>
+
+    <h2><a name="appearance">What does it look like?</a></h2>
+
+    <p>
+        It updates DIM's "Compare Items" UI (the part circled in green in the screenshot).
+    </p>
+
+    <div>
+        <a href="./compare-drawer.png"><img src="./compare-drawer.png"></a>
+    </div>
+
+    <p>
+        To something like this:
+    </p>
+
+    <table style="text-align: center;">
+        <tr>
+            <th>Before</th>
+            <th>After</th>
+        </tr>
+        <tr>
+            <td>
+                <a href="./Before.png"><img style="width: 75%;" src="./Before.png" /></a>
+            </td>
+            <td>
+                <a href="./After.png"><img style="width: 75%;" src="./After.png" /></a>
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        See the green rectangle in the screenshot below? That's where the new stat appears, near the top between the
+        name
+        and the Power stat.
+    </p>
+
+    <p>
+        For Combat Bows, the name of this stat is "ARROWS!"
+    </p>
+
+    <p>
+        <a href="./after-with-score-row-highlighted.png"><img src="./after-with-score-row-highlighted.png" /></a>
+    </p>
+
+    <p>
+        See what names are given to other weapon types!
+    </p>
+
+    <h2><a name="motivation">What inspired this extension?</a></h2>
+
+    <ol>
+        <li>
+            I wanted to see a DPS (damage per second) stat that could be calculated using a formula that
+            includes Impact and RPM, so I opened the browser's debug console and experimented with some loose JavaScript
+            that updated DIM's Compare Items table.
+        </li>
+        <li>
+            Encouraged by the success of this custom DPS stat, I was encouraged to also roll up other interesting weapon
+            stats like Reload Speed and Aim Assist so that I didn't have to do the calculations in my head.
+        </li>
+        <li>
+            But I got tired of repeatedly opening the browser's debug console to manually execute the custom JavaScript
+            every time I opened the Compare Items UI.
+        </li>
+    </ol>
+
+    <h2><a name="how">How does it work?</a></h2>
+
+    <p>
+        Prerequisite:
+        The "Compare Items" UI must be open and there must be more than one weapon in it.
+    </p>
+
+    <ol>
+        <li>
+            The type of weapons being compared is determined (e.g. "Combat Bow", "Grenade Launcher").
+        </li>
+        <li>
+            The extension looks up the formula appropriate for this weapon type.
+        </li>
+        <li>
+            The formula specifies how to calculate a weapon's score as a combination of its stats. (See example below.)
+        </li>
+        <li>
+            The score for each weapon is calculated, normalized to betwen 0.000 and 1.000, colored from cyan (best) to
+            red (worst), and then displayed in a new, sortable row of numbers underneath the weapon names.
+        </li>
+    </ol>
+
+    <h3><a name"exampleFormula">Example weapon score formula</a></h3>
+
+    <p>
+        <a href="./formula-tooltip.png"><img src="./formula-tooltip.png" /></a>
+        In this screenshot we see a tooltip showing that the Hand Cannon formula is calculated as
+        (RPM ❌ Impact ❌ Range ❌ Stability ❌ Reload ❌ Aim ❌ Magazine) ➗ (Handling ❌ Zoom).
+        The tooltip appears when you hover over the score row's name, in this case "BANG!".
+    </p>
+    <p>
+        This Hand Cannon formula is derived from my play style, which prefers stats like RPM, Impact, and Stability to
+        be bigger and stats like Handling and Zoom to be smaller.
+    </p>
+    <p>
+        As a result, Crimson's score is overwhelming because of its high RPM stat.
+    </p>
+    <p>
+        ℹ️ ProTip: If a weapon is skewing the results, you can remove it. The remaining scores will be
+        automatically recalculated and there will be a new "best" among them.
+    </p>
+    <p>
+        For those of you who disagree with any of the formulas, or would like more control over them, please <a
+            href="../Contact/">
+            let me know
+        </a> if I should prioritize letting you customize the formulas over adding support for armor or other
+        inventory item types.
+    </p>
+
+    <h2><a name="interacting">What can I do with the scores?</a></h2>
+
+    <dl>
+        <dt>Sort them</dt>
+        <dd>
+            <p>
+                Click on the row name to sort weapons by their scores. Click again to change the sort order.
+            </p>
+        </dd>
+        <dt>Learn what the scoring formula is</dt>
+        <dd>
+            <p>
+                Hover over the row name to read the formula in a tooltip.
+            </p>
+        </dd>
+        <dt>Add or remove weapons to the list</dt>
+        <dd>
+            <p>
+                The scores will recalculate soon after any changes.
+            </p>
+        </dd>
+        <dt>See how changing the perks affects the score</dt>
+        <dd>
+            <p>
+                If you preview a change by clicking on a perk in DIM, or permanently change a weapon's perks in DIM or
+                in-game, its score will automatically update shortly after DIM updates.
+            </p>
+        </dd>
+    </dl>
+
+    <h2><a name="known-issues">Known issues</a></h2>
+
+    <dl>
+        <dt>Can I customize the formulas?</dt>
+        <dd>
+            <p>
+                Not as of April 2025, but please <a href="../Contact/">let me know</a> if I should prioritize letting
+                you do that, or invite you to send me a pull request if you add that feature yourself.
+            </p>
+        </dd>
+        <dt>Why don't the formulas include the Power stat?</dt>
+        <dd>
+            <p>
+                To draw my attention to underleveled weapons that deserved to be infused.
+            </p>
+        </dd>
+        <dt>Why isn't armor scored?</dt>
+        <dd>
+            <p>
+                My biggest time sink in DIM was comparing weapons, so I solved that problem first.
+            </p>
+        </dd>
+        <dt>
+            Where's the &gt; or &lt; arrow that shows which direction the scores are sorted?
+        </dt>
+        <dd>
+            <p>
+                DIM uses an SVG to draw that arrow and I haven't learned how to do SVGs yet, sorry.
+                Also, my code assumes the arrow isn't there, so adding the arrow would break my fragile code.
+                Also, why not just click the row name a few
+                more times until you figure out which way it's sorted?
+            </p>
+        </dd>
+    </dl>
+
+
+    <!-- copyright notice footer -->
+    <hr />
+    &copy; 2025 <a href="/">平和 - Hey, Washington! Software</a>
+    | <a href="./Contact/">Contact</a>
+
+</body>
+
+</html>
