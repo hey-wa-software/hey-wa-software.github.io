@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>平和 - Weapon Comparison Extension for DIM > About</title>
+    <title>平和 - Item-Scoring Extension for DIM > About</title>
     <style>
         dt {
             font-weight: bold;
@@ -13,7 +13,7 @@
     <!-- site identification header -->
     <h1><a href="/">平和</a></h1>
     <!-- folder identification header -->
-    <h2><a href="/WeaponComparison">Weapon Comparison Extension for DIM</a> (Browser Extension)</h2>
+    <h2><a href="/DIM-Item-Scoring">Item-Scoring Extension for DIM</a> (Browser Extension)</h2>
     <!-- page identification header -->
     <h2>
         About
@@ -53,7 +53,8 @@
 
     <p>
         When comparing two or more weapons, this extension reads each weapon's stats to calculate a score, displays that
-        score below each weapon's name, and lets you sort this new row of numbers. The "best" score is shown in cyan as
+        score below each weapon's name, and lets you sort the weapons by their score. The "best" score is shown in cyan
+        as
         "1.000" and the numbers get smaller and redder from there.
     </p>
 
@@ -88,8 +89,7 @@
 
     <p>
         See the green rectangle in the screenshot below? That's where the new stat appears, near the top between the
-        name
-        and the Power stat.
+        name and the Power stat.
     </p>
 
     <p>
@@ -161,8 +161,8 @@
         As a result, Crimson's score is overwhelming because of its high RPM stat.
     </p>
     <p>
-        ℹ️ ProTip: If a weapon is skewing the results, you can remove it. The remaining scores will be
-        automatically recalculated and there will be a new "best" among them.
+        ℹ️ ProTip: If you don't like how a weapon is skewing the results, you can remove it from the comparison.
+        The remaining scores will be automatically recalculated and there will be a new "best" among them.
     </p>
     <p>
         For those of you who disagree with any of the formulas, or would like more control over them, please <a
@@ -193,12 +193,23 @@
                 The scores will recalculate soon after any changes.
             </p>
         </dd>
-        <dt>See how changing the perks affects the score</dt>
+        <dt>See how changing a weapon's perks, or masterworking it, affects its score</dt>
         <dd>
             <p>
-                If you preview a change by clicking on a perk in DIM, or permanently change a weapon's perks in DIM or
-                in-game, its score will automatically update shortly after DIM updates.
+                If for any reason a weapon's stats change, and that stat is included in the weapon's scoring formula,
+                then this extension will automatically recalculate a weapon's score shortly after DIM becomes aware of
+                those changes. For example:
             </p>
+            <ul>
+                <li>You change the "Assume Masterworked" toggle</li>
+                <li>You preview a perk change in DIM's "Compare Items" UI</li>
+                <li>You apply a perk change to the weapon in DIM</li>
+                <li>You apply a perk change to the weapon in-game (and wait for DIM to receive the update from Bungie)
+                </li>
+                <li>You increase the weapon's masterworking tier</li>
+                <li>You raise the Power level of the weapon through infusion (if the weapon's formula includes the Power
+                    stat, which it doesn't by default)</li>
+            </ul>
         </dd>
     </dl>
 
@@ -212,10 +223,11 @@
                 you do that, or invite you to send me a pull request if you add that feature yourself.
             </p>
         </dd>
-        <dt>Why don't the formulas include the Power stat?</dt>
+        <dt>Why don't the formulas include the Power stat by default?</dt>
         <dd>
             <p>
-                To draw my attention to underleveled weapons that deserved to be infused.
+                To draw my attention to underleveled weapons that deserve to be infused.
+                If you want to sort by Power, you can always click on the word "Power".
             </p>
         </dd>
         <dt>Why isn't armor scored?</dt>
