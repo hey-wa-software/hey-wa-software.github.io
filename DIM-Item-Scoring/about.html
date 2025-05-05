@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <title>平和 - Item-Scoring Extension for DIM > About</title>
+    <meta charset="utf-8">
+    <title>平和 > Item-Scoring Extension for DIM > About</title>
     <style>
         dt {
             font-weight: bold;
@@ -11,9 +12,9 @@
 
 <body>
     <!-- site identification header -->
-    <h1><a href="/">平和</a></h1>
+    <h1><a href="/">平和 - Hey, Washington! Software</a></h1>
     <!-- folder identification header -->
-    <h2><a href="/DIM-Item-Scoring">Item-Scoring Extension for DIM</a> (Browser Extension)</h2>
+    <h2><a href="/DIM-Item-Scoring">Item-Scoring Extension for Destiny Item Manager</a></h2>
     <!-- page identification header -->
     <h2>
         About
@@ -77,12 +78,12 @@
             <th>Before</th>
             <th>After</th>
         </tr>
-        <tr>
+        <tr style="vertical-align: top;">
             <td>
-                <a href="./Before.png"><img style="width: 75%;" src="./Before.png" /></a>
+                <a href="./Before.png"><img src="./Before.png" /></a>
             </td>
             <td>
-                <a href="./After.png"><img style="width: 75%;" src="./After.png" /></a>
+                <a href="./After.png"><img src="./After.png" /></a>
             </td>
         </tr>
     </table>
@@ -175,12 +176,6 @@
     <h2><a name="interacting">What can I do with the scores?</a></h2>
 
     <dl>
-        <dt>Sort them</dt>
-        <dd>
-            <p>
-                Click on the row name to sort weapons by their scores. Click again to change the sort order.
-            </p>
-        </dd>
         <dt>Learn what the scoring formula is</dt>
         <dd>
             <p>
@@ -216,35 +211,64 @@
     <h2><a name="known-issues">Known issues</a></h2>
 
     <dl>
-        <dt>Can I customize the formulas?</dt>
+        <dt><a name="cannot-sort">Can I sort the items by their score?</a></dt>
+        <dd>
+            <p>
+                Sorry, no, that feature was broken by <a href="https://app.destinyitemmanager.com/whats-new">DIM update 8.67.0</a>.
+            </p>
+        </dd>
+        <dt><a name="customize-formulas">Can I customize the formulas?</a></dt>
         <dd>
             <p>
                 Not as of April 2025, but please <a href="../Contact/">let me know</a> if I should prioritize letting
                 you do that, or invite you to send me a pull request if you add that feature yourself.
             </p>
         </dd>
-        <dt>Why don't the formulas include the Power stat by default?</dt>
+        <dt><a name="armor-not-scored">Why don't armor items have scores?</a></dt>
+        <dd>
+            <p>
+                My biggest time sink in DIM was comparing weapons, so I solved that problem first.
+            </p>
+        </dd>
+        <dt><a name="no-power-in-formulas">Why don't the formulas include the Power stat by default?</a></dt>
         <dd>
             <p>
                 To draw my attention to underleveled weapons that deserve to be infused.
                 If you want to sort by Power, you can always click on the word "Power".
             </p>
         </dd>
-        <dt>Why isn't armor scored?</dt>
+        <dt><a name="no-perks-in-formulas">Why don't the formulas include weapon perks?</a></dt>
         <dd>
             <p>
-                My biggest time sink in DIM was comparing weapons, so I solved that problem first.
+                If a perk permanently affects one or more stat numbers (e.g. "+1 Magazine", "-10 Stability"),
+                and the formula includes that stat, and that perk is selected,
+                then the score will reflect that.
+            </p>
+            <p>
+                If a perk only affects one or more stat numbers as a result of how you play
+                (e.g. "Feeding Frenzy - Each rapid kill with this weapon progressively increases reload speed for a short time."),
+                then that is impossible to account for outside of the game.
+            </p>
+            <p>
+                In short, this extension doesn't read the perks for each weapon,
+                and therefore doesn't take their effects into account -- unless,
+                as mentioned above, they affect the weapon's stats immediately.
             </p>
         </dd>
         <dt>
-            Where's the &gt; or &lt; arrow that shows which direction the scores are sorted?
+            <a name="ui-scrambled">Why does the Compare Items UI look messed up sometimes?</a>
         </dt>
         <dd>
             <p>
-                DIM uses an SVG to draw that arrow and I haven't learned how to do SVGs yet, sorry.
-                Also, my code assumes the arrow isn't there, so adding the arrow would break my fragile code.
-                Also, why not just click the row name a few
-                more times until you figure out which way it's sorted?
+                In <a href="https://app.destinyitemmanager.com/whats-new">update 8.67.0</a>,
+                DIM changed how it renders the HTML.  My code just messes with the HTML and
+                CSS elements after DIM renders them to your browser; it doesn't change DIM's code,
+                so the two don't play nice sometimes, sorry.
+            </p>
+            <p>
+                You'll see this visual corruption when sorting the items by other stats,
+                or by adding or removing items.  If the corruption doesn't go away by itself
+                after a few seconds, then just close and reopen the Compare Items UI.
             </p>
         </dd>
     </dl>

@@ -1,22 +1,28 @@
 <html>
 
 <head>
-    <title>平和 - Item-Scoring Extension for DIM</title>
+    <meta charset="utf-8">
+    <title>平和 > Item-Scoring Extension for DIM</title>
     <style>
-        dt {
-            font-size: 150%;
-            font-weight: bold;
+        body {
+            font-family: sans-serif;
         }
-        dd dl dt {
-            font-size: 125%;
+
+        dt {
             font-weight: bold;
+            font-size: 125%;
+        }
+
+        dl dl dt {
+            font-weight: bold;
+            font-size: 100%;
         }
     </style>
 </head>
 
 <body>
     <!-- site identification header -->
-    <h1><a href="/">平和</a></h1>
+    <h1><a href="/">平和 - Hey, Washington! Software</a></h1>
     <!-- page identification header -->
     <h2>Item-Scoring Extension for Destiny Item Manager</h2>
     <hr />
@@ -32,7 +38,7 @@
                     Destiny Item Manager.
                 </a>
                 Its purpose is to make it easier to figure out which weapon is "best" according to a formula applied to
-                each weapon's stats.  <a href="./about.html">Learn more.</a>
+                each weapon's stats. <a href="./about.html">Learn more.</a>
             </p>
             <p>
                 <a href="./after-with-score-row-highlighted.png">
@@ -54,10 +60,27 @@
                 <li>Open and sign into <a href="https://app.destinyitemmanager.com/">Destiny Item Manager</a>.</li>
                 <li>View your Inventory.</li>
                 <li>Use the "Compare Items" UI to compare two or more weapons.</li>
-                <li>A new and sortable row of numbers will automatically appear between the weapon names and Power stat.  See the sceenshot above.</li>
-                <li>Each number is the weapon's "score", and updates automatically as you add and remove weapons from the Compare Items UI.</li>
-                <li><a href="./about.html">Learn more</a> about how the extension works, including some tips and tricks.</li>
+                <li>A new and sortable row of numbers will automatically appear between the weapon names and Power stat.
+                    See the sceenshot above.</li>
+                <li>Each number is the weapon's "score", and updates automatically as you add and remove weapons from
+                    the Compare Items UI.</li>
+                <li><a href="./about.html">Learn more</a> about how the extension works, including some tips and tricks.
+                </li>
             </ol>
+        </dd>
+        <dt><a name="known-issues">Known Issues</a></dt>
+        <dd>
+            <ul>
+                <li><a href="about.html#cannot-sort">Can't sort items by their score.</a></li>
+                <li><a href="about.html#customize-formulas">Can't customize the formulas used to calculate the weapon scores.</a></li>
+                <li><a href="about.html#armor-not-scored">No scores for armor.</a></li>
+                <li><a href="about.html#no-power-in-formulas">Power doesn't affect weapon scores.</a></li>
+                <li><a href="about.html#no-perks-in-formulas">Some perks don't affect weapon scores.</a></li>
+                <li><a href="about.html#ui-scrambled">Sorting items, adding items, and removing items can scramble the Comprae Items table.</a></li>
+            </ul>
+            <p>
+                <a href="about.html#known-issues">More details...</a>
+            </p>
         </dd>
         <dt><a name="feedback">Feedback</a></dt>
         <dd>
@@ -70,7 +93,8 @@
         <dt><a name="future">Future</a></dt>
         <dd>
             <p>
-                I've pretty much satisfied my immediate need for more information in DIM, but I'm also open to finding out where you'd like this to go.
+                I've pretty much satisfied my immediate need for more information in DIM, but I'm also open to finding
+                out where you'd like this to go.
             </p>
 
             <dl>
@@ -81,7 +105,7 @@
                     <p>
                         That would be wonderful! Again, I've scratched my itch and have other projects I'd like to make
                         progress on, but if you would like to take the initiative to work with the DIM team to add this
-                        functionality, more power to you (and I would be grateful)!
+                        functionality, more power to you (and I would be grateful if you could make this extension obsolete)!
                     </p>
                 </dd>
                 <dt>
@@ -98,12 +122,27 @@
                 </dt>
                 <dd>
                     <p>
-                        I can certainly see the appeal of letting the user define th formulas. If someone else had
+                        I can certainly see the appeal of letting the user define the formulas. If someone else had
                         witten this extension this is probably the first feature I'd request of it.
                     </p>
                     <p>
                         Again, I'm not a web developer and pretty UI is not my forte, so if you'd like to help,
                         <a href="../Contact/"> let me know</a> if you'd like to contribute code.
+                        Better yet, <a href="https://github.com/DestinyItemManager/DIM">add the feature to DIM itself</a>.
+                    </p>
+                </dd>
+                <dt>
+                    Support sorting items by their score?
+                </dt>
+                <dd>
+                    <p>
+                        Sure, that would be nice.  I wonder which will happen first:
+                        <ul>
+                            <li>One of you kind readers <a href="https://github.com/DestinyItemManager/DIM">adds this extension's functionality to DIM</a> directly.</li>
+                            <li>I figure out a workaround for <a href="https://app.destinyitemmanager.com/whats-new">DIM update 8.67.0</a>.</li>
+                            <li>DIM changes how they render the Compare Items HTML again, resetting my progress.</li>
+                            <li>I learn DIM's source code and send them a pull request.</li>
+                        </ul>
                     </p>
                 </dd>
             </dl>
